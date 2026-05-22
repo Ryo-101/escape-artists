@@ -7,13 +7,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
-
+    private PickUp pickUp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        pickUp = gameObject.GetComponent<PickUp>();
+        pickUp.Direction = new Vector2(0, -1) * 0.3f;
     }
 
     // Update is called once per frame
