@@ -2,20 +2,18 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject menuCanvas;
+    public GameObject menuCanvas;       // Declares a menu object
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        menuCanvas.SetActive(false);
+        menuCanvas.SetActive(false);                            // Sets menu visibility to false
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))                      // If the Tab key input was pressed
         {
-            menuCanvas.SetActive(!menuCanvas.activeSelf);
+            menuCanvas.SetActive(!menuCanvas.activeSelf);           // Sets menu visibility to true
         }
         
     }
