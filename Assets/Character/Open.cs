@@ -3,9 +3,9 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
 
-    public GameObject Player;                               // Reference to the player object
-    public GameObject Keybind;                              // Reference to the keybind object
-    private GameObject itemDetected;                        // Reference to the item object
+    [SerializeField] private GameObject Player;                             // Reference to the player object
+    [SerializeField] private GameObject Keybind;                            // Reference to the keybind object
+    private GameObject itemDetected;                                        // Reference to the item object
 
     private void OnTriggerEnter2D(Collider2D collision)             
     {
@@ -19,9 +19,9 @@ public class Interact : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && itemDetected)                    // If the key being pressed is E AND an item is being held
         {
             if (itemDetected.CompareTag("Key"))                             // Compare the tag of held item to "Key"
-            {   
-                this.gameObject.SetActive(false);                           // If match, then hide the interactable object
-                Destroy(itemDetected);                                      // and attempt to destroy the held item (not working atm)
+            {
+                Destroy(itemDetected);                                      // and attempt to destroy the held item
+                Destroy(this.gameObject);
             }
         }
     }
